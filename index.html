@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charSet="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./resources/mouse.svg">
+    
+    <link rel="stylesheet" href="./styles.css" />
+    <title>AVMK - An AI Mouse Controller and Keyboard System</title>
+</head>
+
+<body>
+    <div class="h-screen">
+        <div>
+            <div class="bg-white">
+                <div class="bg-gray-50 overflow-x-hidden border-b border-gray-200 relative">
+                    <div class="pointer-events-none"><svg class="absolute inset-0" width="100%" height="100%"
+                            viewBox="0 0 863 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g opacity="0.26" filter="url(#filter0_f)">
+                                <path
+                                    d="M414.461 908.481C372.537 1068.84 59.725 1125.93 -284.224 1036.01C-628.174 946.085 -873.014 743.194 -831.09 582.839C-789.166 422.483 -476.354 365.387 -132.404 455.311C-94.1543 465.311 69.186 386.75 104.726 399.331C388.771 499.877 451.723 765.959 414.461 908.481Z"
+                                    fill="url(#paint0_linear)"></path>
+                            </g>
+                            <defs>
+                                <filter id="filter0_f" x="-1250.37" y="-161.374" width="2113.01" height="1703.58"
+                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape">
+                                    </feBlend>
+                                    <feGaussianBlur stdDeviation="135" result="effect1_foregroundBlur"></feGaussianBlur>
+                                </filter>
+                                <linearGradient id="paint0_linear" x1="-129.383" y1="445.257" x2="8.1282" y2="619.845"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#9FC4D3" stop-opacity="0"></stop>
+                                    <stop offset="0.0001" stop-color="#9EE3FF" stop-opacity="0"></stop>
+                                    <stop offset="1" stop-color="#B8E5FF"></stop>
+                                </linearGradient>
+                            </defs>
+                        </svg><svg class="absolute inset-0 left-10" width="100%" height="100%" viewBox="0 0 1440 882"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g opacity="0.15" filter="url(#filter1_f)">
+                                <path
+                                    d="M1359.52 1070.01C1317.6 1230.37 1004.79 1287.46 660.836 1197.54C316.887 1107.62 72.0469 904.725 113.971 744.37C155.895 584.014 468.707 526.918 812.657 616.842C850.906 626.842 1014.25 548.282 1049.79 560.862C1333.83 661.408 1396.78 927.49 1359.52 1070.01Z"
+                                    fill="url(#paint1_linear)"></path>
+                            </g>
+                            <defs>
+                                <filter id="filter1_f" x="-305.313" y="0.157196" width="2113.01" height="1703.58"
+                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape">
+                                    </feBlend>
+                                    <feGaussianBlur stdDeviation="135" result="effect1_foregroundBlur"></feGaussianBlur>
+                                </filter>
+                                <linearGradient id="paint1_linear" x1="815.677" y1="606.788" x2="756.458" y2="833.298"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#9FC4D3" stop-opacity="0"></stop>
+                                    <stop offset="0.0001" stop-color="#9EE3FF" stop-opacity="0"></stop>
+                                    <stop offset="1" stop-color="#D49DFF"></stop>
+                                </linearGradient>
+                            </defs>
+                        </svg></div>
+                    <div class="relative py-6 z-10">
+                        
+                        
+                        
+                        <nav
+                            class="mx-auto flex items-center justify-between px-4 sm:px-6 md:px-8 max-w-screen-lg lg:p-0">
+                            <a class="flex items-center" href="#"><img class="h-10 w-auto sm:h-12 my-2"
+                                    src="./resources/mouse.svg" alt />
+                                <div class="ml-5 flex flex-col justify-center"></div>
+                            </a><input type="checkbox" class="hidden checked:sibling:block" id="menuToggle"
+                                autoComplete="off" />
+                            <div
+                                class="hidden absolute top-0 inset-x-0 p-2 transition transform origin-top-right lg:hidden">
+                                <div class="rounded-lg shadow-md">
+                                    <div class="rounded-lg bg-white shadow-xs overflow-hidden">
+                                        <div class="px-5 pt-4 flex items-center justify-between"><a href="/"
+                                                class="flex items-center"><img class="h-10 w-auto sm:h-12 my-2"
+                                                    src="/logo.svg?__frsh_c=bmsj3h85z9a0" alt />
+                                                <div class="ml-5 flex flex-col justify-center">
+                                                    <div
+                                                        class="font-bold text-gray-900 leading-tight text-2xl sm:text-3xl tracking-tight">
+                                                        AVMK</div>
+                                                </div>
+                                            </a> <label class="-mr-2" for="menuToggle">
+                                                <div
+                                                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                                                    <svg class="h-6 w-6" stroke="currentColor" fill="none"
+                                                        viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round"
+                                                            strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                                                    </svg></div>
+                                            </label></div>
+
+
+
+
+                                    <!-- NAVIGATION -->
+
+                                        <div class="px-2 pt-4 pb-3">
+                                            
+                                            <a href="#about-section"
+                                            class="block px-3 py-2 rounded-md text-base font-medium rounded-lg border-2 border-gray-700 bg-transparent text-gray-700 hover:border-gray-900 hover:bg-gray-900 hover:text-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">
+                                            About</a>
+                                            
+                                            <a href="#installation-section"
+                                            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">
+                                            Installation</a>
+                                            
+                                            <a href="#Modules-section"
+                                            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">
+                                            Modules</a>
+                                                
+                                            <a href="#Algorithm-section"
+                                            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">
+                                            Algorithm</a>
+                                            
+                                            <a href="#third-party-library-section"
+                                            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">
+                                            Third Party Library</a>
+                                                
+                                            <!-- <a href="/x"
+                                            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">
+                                            Third Party Modules</a> -->
+
+                                            
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            <label class="-mr-2 flex items-center lg:hidden" for="menuToggle">
+                                <div
+                                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                        <title>Menu | AVMK</title>
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                                            d="M4 6h16M4 12h16M4 18h7"></path>
+                                    </svg></div>
+                            </label>
+
+
+
+                            <div class="hidden lg:flex md:ml-10 items-end"><a href="#about-section"
+                                    class="font-medium py-2 px-3 rounded-lg border-2 border-gray-700 bg-transparent text-gray-700 hover:border-gray-900 hover:bg-gray-900 hover:text-gray-50 transition duration-150 ease-in-out">
+                                    About</a>
+                                
+                                    <a href="#installation-section"
+                                    class="ml-10 my-auto font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">
+                                    Installation</a>
+                                    
+                                    <a
+                                    href="#Modules-section"
+                                    class="ml-10 my-auto font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">
+                                    Modules</a>
+                                    
+                                    <a
+                                    href="#Algorithm-section"
+                                    class="ml-10 my-auto font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">
+                                    Algorithm</a>
+                                    
+                                    <a
+                                    href="#third-party-library-section"
+                                    class="ml-10 my-auto font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">
+                                    Third Party Library</a>
+                                    
+                                    <a href="/x" style="visibility: hidden"
+                                    class="ml-10 my-auto font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">
+                                    Third Party Modules</a>
+
+                                    <!-- <a href="/x" style="visibility: hidden"
+                                    class="ml-10 my-auto font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">
+                                    Third Party</a> -->
+                                    
+                                    
+                                    <!-- <a href="https://github.com/denoland"
+                                    class="ml-10 my-auto text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out leading-0"><span
+                                        class="sr-only">GitHub</span><svg class="h-6 w-6 inline" fill="currentColor" viewBox="0 0 24 24">
+                                        <path fillRule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                            clipRule="evenodd"></path>
+                                    </svg></a> -->
+                            </div>
+                        </nav>
+
+
+
+
+
+                    </div>
+                    <div
+                        class="relative max-w-screen-sm mx-auto px-4 sm:px-6 md:px-8 pt-12 pb-20 flex flex-col items-center">
+                        <!-- <h1 class="font-extrabold text-5xl leading-10 tracking-tight text-gray-900">AVMK</h1> -->
+
+                        <h1 class="font-extrabold text-5xl leading-10 text-gray-900" style="text-align: center; ">AI Virtual Mouse and Keyboard</h1>
+
+                        
+
+                        <h2 class="mt-4 sm:mt-5 font-light text-2xl text-center leading-tight text-gray-900">An <strong
+                                class="font-semibold">AI</strong> Virtual <strong
+                                class="font-semibold">Mouse</strong> and <strong
+                                class="font-semibold">Keyboard</strong> System</h2>
+                                
+                                <a href="https://github.com/Tejasmoon/Final_Year_Project/releases/download/v1.2.0/AI.Virtual.Mouse.Keyboard.exe"
+                            class="rounded-full mt-8 px-8 py-2 transition-colors duration-75 ease-in-out bg-blue-500 hover:bg-blue-400 text-white text-lg shadow-lg">Install</a>
+                    </div>
+                </div>
+
+
+
+
+                <div id="about-section" class="max-w-screen-sm mx-auto px-4 sm:px-6 md:px-8 mt-20">
+                    <p class="my-4 text-gray-700"><span class="text-2xl font-semibold text-gray-900">T</span>his project proposes a way of controlling the position of the mouse cursor with the help of a <a class="link" href="#">fingertip</a> 
+                        without using any electronic device. The proposed system will require only a <a class="link" href="#">webcam</a> as an input device. 
+                        </p>
+
+                        <p class="my-4 text-gray-700">The computer's camera will scan the image of various movements made by a individual's hand, and the mouse or pointer 
+                            will move in response to the movement of the <a class="link" href="#">gestures</a>, including doing right and left clicks using distinct gestures. 
+                            Similarly, 
+                            different gestures can be used to control the keyboard, such as a one-finger gesture to choose an alphabet etc.</p>
+
+                        <p class="my-4 text-gray-700"><strong>Objective</strong></p>
+                    <ol class="ml-8 list-disc text-gray-700">
+                        <li>To develop an alternative to the regular and traditional mouse system to perform and control the mouse functions</li>
+                        <li>Creating a virtual <a href="#" class="link">Human Computer Interaction</a>(HCI) device such as mouse using a webcam and computer vision techniques can be an alternative way for the touch screen.</li>
+                        
+                        
+                        <!-- <li>Supports <a class="link" href="/manual/typescript">TypeScript</a> out of the box.</li>
+                        <li>Ships only a single executable file.</li>
+                        <li>Has <a class="link" href="/manual/tools">built-in development tooling</a> like a dependency
+                            inspector (<a class="link" href="/manual/tools/dependency_inspector"><code
+                                    class="py-1 px-2 font-mono bg-gray-100 text-sm break-all rounded-[6px]">deno info</code></a>)
+                            and a code formatter (<a class="link" href="/manual/tools/formatter"><code
+                                    class="py-1 px-2 font-mono bg-gray-100 text-sm break-all rounded-[6px]">deno fmt</code></a>).
+                        </li>
+                        <li>Has a set of reviewed (audited) standard modules that are guaranteed to work with Deno: <a
+                                href="https://doc.deno.land/https://deno.land/std" class="link">deno.land/std</a>.</li>
+                        <li>Has a number of <a href="https://github.com/denoland/deno/wiki#companies-interested-in-deno"
+                                class="link">companies interested in using and exploring Deno.</a></li> -->
+                    </ol>
+                </div>
+
+
+
+
+
+                <div id="installation-section" class="max-w-screen-sm mx-auto px-4 sm:px-6 md:px-8 mt-20">
+                        <h3 class="font-bold text-xl" id="installation">Installation</h3>
+
+
+                    <p class="my-4 text-gray-700">AI Virtual Mouse and Keyboard ships as a single executable with windows only support. You can
+                        install it using the instal button above, or download a release binary from the <a
+                            href="https://github.com/denoland/deno/releases" class="link">releases page</a>.</p>
+
+
+
+                    <div class="my-4 text-gray-700">
+                        <p class="py-2">Step 1:</p>
+                        <pre class="text-sm gfm-highlight highlight-source-bash flex p-4" data-color-mode="light"
+                            data-light-theme="light"><code><div class="text-gray-300 text-right select-none inline-block mr-2 sm:mr-3"></div></code><div class="block w-full overflow-y-auto"><span id="L1" class="block"><span class="token function">Click Install button to install .exe file</span></span></div></pre>
+                    </div>
+
+                    <div class="my-4 text-gray-700">
+                        <p class="py-2">Step 2:</p>
+                        <pre class="text-sm gfm-highlight highlight-source-bash flex p-4" data-color-mode="light"
+                            data-light-theme="light"><code><div class="text-gray-300 text-right select-none inline-block mr-2 sm:mr-3"></div></code><div class="block w-full overflow-y-auto"><span id="L1" class="block"><span class="token function">After the installation, extract the zip file</span></span></div></pre>
+                    </div>
+                    <div class="my-4 text-gray-700">
+                        <p class="py-2">Step 3:</p>
+                        <pre class="text-sm gfm-highlight highlight-source-bash flex p-4" data-color-mode="light"
+                            data-light-theme="light"><code><div class="text-gray-300 text-right select-none inline-block mr-2 sm:mr-3"></div></code><div class="block w-full overflow-y-auto"><span id="L1" class="block"><span class="token function">Double-Click the extracted file to open the file</span></span></div></pre>
+                    </div>
+                    <div class="my-4 text-gray-700">
+                        <p class="py-2">Step 4:</p>
+                        <pre class="text-sm gfm-highlight highlight-source-bash flex p-4" data-color-mode="light"
+                            data-light-theme="light"><code><div class="text-gray-300 text-right select-none inline-block mr-2 sm:mr-3"></div></code><div class="block w-full overflow-y-auto"><span id="L1" class="block"><span class="token function">Run the start file</span></span></div></pre>
+                    </div>
+                </div>
+                
+
+
+
+                <div id="Modules-section" class="max-w-screen-sm mx-auto px-4 sm:px-6 md:px-8 mt-20">
+                        <h3 class="font-bold text-xl" id="runtime-documentation">Modules Description</h3>
+
+
+                        <p class="my-4 text-gray-700"><strong>Hand Tracking Module</strong></p>
+                        <p class="my-4 text-gray-700">This is the building block of the project upon which the entire architecture & implementation is done.</p>
+                        <p class="my-4 text-gray-700">To build this module Mediapipe By Google has been used in order to detect whether a palm is present in the given input frame & if it is present then using some methods provided in the mediapipe module calculation of the 21 landmarks of our hand is done along the with their x,y & z coordinates & are stored in an array.</p>
+                        <p class="my-4 text-gray-700">Once this is done we go forward & plot the points of hand landmarks & lines connecting so the user can be assured that the hand has been detected.</p>
+                        <p style="padding-top: 1rem; padding-bottom: 1rem;"><img src="https://google.github.io/mediapipe/images/mobile/hand_landmarks.png" alt=""></p>
+                        <p style="text-align:center; padding-bottom:1.5rem">Source: <a class="link" href="https://google.github.io/mediapipe/solutions/hands#hand-landmark-model">Google MediaPipe Hands</a></p>
+
+
+                        <p class="my-4 text-gray-700"><strong>Mouse Module</strong></p>
+                        <p class="my-4 text-gray-700">The mouse module uses all the calculations & results from the Hand Tracking Module to detect the gestures & then according to the gestures detected it then performs the mouse functions like left click, right click etc.</p>
+
+
+
+                        <p class="my-4 text-gray-700"><strong>Keyboard Module</strong></p>
+                        <p class="my-4 text-gray-700">The basic runtime documentation for Deno can be found on</p>
+
+                </div>
+                
+
+
+
+
+
+                <div id="Algorithm-section" class="max-w-screen-sm mx-auto px-4 sm:px-6 md:px-8 mt-20">
+                    <h3 class="font-bold text-xl" id="runtime-documentation">Algorithm</h3>
+
+                    <p class="py-2"><strong class="text-gray-500">Step 1:</strong><span style="margin-left:0.5rem" class="my-4 text-gray-700">Take the input frame from the webcam.</span></p>
+                    <p class="py-2"><strong class="text-gray-500">Step 2:</strong><span style="margin-left:0.5rem" class="my-4 text-gray-700">If Palm is detected then go to Step 3, otherwise to Step 1.</span></p>
+                    <p class="py-2"><strong class="text-gray-500">Step 3:</strong><span style="margin-left:0.5rem" class="my-4 text-gray-700">Calculate the coordinates of the Landmarks of Hand Points & arrange it in an array. </span></p>
+                    <p class="py-2"><strong class="text-gray-500">Step 4:</strong><span style="margin-left:0.5rem" class="my-4 text-gray-700">Use the coordinates of respective finger’s hand landmarks in order to detect the status of each finger.</span></p>
+                    <p class="py-2"><strong class="text-gray-500">Step 5:</strong><span style="margin-left:0.5rem" class="my-4 text-gray-700">If Only Index & Middle Finger are in up position, then mouse goes to hover mode & then back to Step 1.</span></p>                    
+                    <p class="py-2"><strong class="text-gray-500">Step 6:</strong><span style="margin-left:0.5rem" class="my-4 text-gray-700">If Index, Middle & Third Fingers are in up position, then mouse goes to Scrolling Mode & then back to Step 1.</span></p>                    
+                    <p class="py-2"><strong class="text-gray-500">Step 7:</strong><span style="margin-left:0.5rem" class="my-4 text-gray-700"> If Thumb is in up position, then mouse goes to Clicking mode.</span></p>
+                    <p style="margin-left:1.5rem" class="py-2"><strong class="text-gray-500">Step 7a:</strong><span style="margin-left:0.5rem" class="my-4 text-gray-700"> If the index finger is down, then it performs a left click operation.</span></p>
+                    <p style="margin-left:1.5rem" class="py-2"><strong class="text-gray-500">Step 7b:</strong><span style="margin-left:0.5rem" class="my-4 text-gray-700"> If Thumb is in up position, then mouse goes to Clicking mode.</span></p>
+                    
+                    
+                
+
+            </div>
+
+
+
+
+                <div id="third-party-library-section" class="max-w-screen-sm mx-auto px-4 sm:px-6 md:px-8 mt-20">    
+                        <h3 class="font-bold text-xl" id="third-party-modules">Third Party Libraries Used</h3>
+                    <p class="my-4 text-gray-700"><a class="link" href="https://www.python.org/downloads/">Python</a> programing language is mostly used for developing this kind 
+                        virtual mouse system, and <a class="link" href="https://pypi.org/project/opencv-python/">OpenCV library</a> 
+                        is additionally used for contract computer vision.
+                         </p>
+
+                    <p class="my-4 text-gray-700">
+                             The system makes use of the well-known python libraries like 
+                             <a class="link" href="https://google.github.io/mediapipe/">MediaPipe</a> and 
+                             <a class="link" href="https://pypi.org/project/autopy/">Autopy</a> for the 
+                             tracking of the hands and fingertip in realtime and also, 
+                             <a class="link" href="https://pypi.org/project/pynput/">Pyput</a>, and 
+                             <a class="link" href="https://pypi.org/project/PyAutoGUI/">PyAutoGUI</a> packages 
+                             were used for tracking the finger traveling in the screen for performing operations like 
+                             left-click, right-click, drag and scrolling functions.</p>
+                    
+                </div>
+                
+                
+
+
+
+                    
+                <div class="mt-20">
+                    <div>
+                        <!-- <div class="max-w-screen-xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8"> -->
+                            <nav class="-mx-5 -my-2 flex flex-wrap justify-center">
+                                <div class="px-3 py-6"><a href="/manual"
+                                        class="text-base leading-6 text-gray-500 hover:text-gray-900">AI Virtual Mouse and Keyboard</a></div>
+                               
+                            </nav>
+
+
+
+                            
+
+                            <!-- <div class="mt-6 flex justify-center flex-wrap"><a
+                                    href="https://github.com/denoland/deno"><img class="m-2 opacity-75"
+                                        alt="denoland/deno CI"
+                                        src="https://img.shields.io/github/workflow/status/denoland/deno/ci/main?label=deno&amp;logo=github" /></a>
+                            </div> -->
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
